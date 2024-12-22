@@ -1,6 +1,6 @@
 import {solution} from "../solutions"
 
-export class day01 implements solution
+export class day13 implements solution
 {
     public part_a(input: string) : string
     {
