@@ -3,14 +3,14 @@ import { solutions } from "./solutions";
 
 enum Part
 {
-    A = "A",
-    B = "B"
+    a = "A",
+    b = "B"
 }
 
 enum RunType
 {
-    Test,
-    Solve
+    test,
+    solve
 }
 
 function solve(day: string, part: Part, runType: RunType)
@@ -18,12 +18,12 @@ function solve(day: string, part: Part, runType: RunType)
     const input = get_input(day, runType);
     const solution = solutions[day];
 
-    const runTypeStr = runType == RunType.Test ? "(--TEST--)" : "[--SOLVE--]";
+    const runTypeStr = runType == RunType.test ? "(--TEST--)" : "[--SOLVE--]";
     console.log(`\n${runTypeStr} ${day}, part ${part}:\n`);
     console.log("-------------------------");
 
     const start = timer();
-    const result = part == Part.A
+    const result = part == Part.a
         ? solution.part_a(input)
         : solution.part_b(input);
     const stop = timer();
@@ -42,10 +42,10 @@ function timer()
 
 function get_input(day: string, runType: RunType) : string
 {
-    const dir = runType == RunType.Test ? "./input_test/" : "./input/";
+    const dir = runType == RunType.test ? "./input_test/" : "./input/";
     const file = `${dir}${day}.txt`;
     console.log(`read file: ${file}`);
     return fs.readFileSync(file, "utf-8");
 }
 
-solve("day01", Part.A, RunType.Test);
+solve("day01", Part.b, RunType.solve);
