@@ -26,8 +26,8 @@ import { day25 } from "./solutions/day25";
 
 export interface solution
 {
-    part_a(input: string): string;
-    part_b(input: string): string;
+    part_a(input: string): Promise<number>;
+    part_b(input: string): Promise<number>;
 }
 
 export const solutions: {[day: string]: solution} =

@@ -13,7 +13,7 @@ enum RunType
     solve
 }
 
-function solve(day: string, part: Part, runType: RunType)
+async function solve(day: string, part: Part, runType: RunType)
 {
     const input = get_input(day, runType);
     const solution = solutions[day];
@@ -24,8 +24,8 @@ function solve(day: string, part: Part, runType: RunType)
 
     const start = timer();
     const result = part == Part.a
-        ? solution.part_a(input)
-        : solution.part_b(input);
+        ? await solution.part_a(input)
+        : await solution.part_b(input);
     const stop = timer();
     console.log(`${result}`);
 
@@ -35,9 +35,7 @@ function solve(day: string, part: Part, runType: RunType)
 
 function timer()
 {
-    const timeStart = new Date().getTime();
-    const ms = (new Date().getTime() - timeStart);
-    return ms;
+    return new Date().getTime();
 }
 
 function get_input(day: string, runType: RunType) : string
@@ -48,4 +46,4 @@ function get_input(day: string, runType: RunType) : string
     return fs.readFileSync(file, "utf-8");
 }
 
-solve("day01", Part.b, RunType.solve);
+solve("day02", Part.b, RunType.solve);

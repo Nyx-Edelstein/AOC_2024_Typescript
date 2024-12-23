@@ -2,13 +2,13 @@ import {solution} from "../solutions"
 
 export class day06 implements solution
 {
-    public part_a(input: string) : string
+    public async part_a(input: string)
     {
-        return "nyi";
+        return 0;
     }
     
-    public part_b(input: string)
+    public async part_b(input: string)
     {
-        return "nyi";
+        return 0;
     }
 }
