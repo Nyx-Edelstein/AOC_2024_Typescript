@@ -1,5 +1,4 @@
 import {solution} from "../solutions"
-const readline = require('readline-sync');
 
 export class day02 implements solution
 {
