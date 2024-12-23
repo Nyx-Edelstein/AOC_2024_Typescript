@@ -46,4 +46,4 @@ function get_input(day: string, runType: RunType) : string
     return fs.readFileSync(file, "utf-8");
 }
 
-solve("day02", Part.b, RunType.solve);
+solve("day03", Part.b, RunType.solve);
