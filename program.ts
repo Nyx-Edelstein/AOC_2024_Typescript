@@ -20,7 +20,7 @@ async function solve(day: string, part: Part, runType: RunType)
 
     const runTypeStr = runType == RunType.test ? "(--TEST--)" : "[--SOLVE--]";
     console.log(`\n${runTypeStr} ${day}, part ${part}:\n`);
-    console.log("-------------------------");
+    console.log("----------------------------------------");
 
     const start = timer();
     const result = part == Part.a
@@ -29,7 +29,7 @@ async function solve(day: string, part: Part, runType: RunType)
     const stop = timer();
     console.log(`${result}`);
 
-    console.log("-------------------------");
+    console.log("----------------------------------------");
     console.log(`\n${stop-start} ms\n`);
 }
 
@@ -46,4 +46,4 @@ function get_input(day: string, runType: RunType) : string
     return fs.readFileSync(file, "utf-8");
 }
 
-solve("day05", Part.b, RunType.solve);
+solve("day06", Part.b, RunType.solve);
