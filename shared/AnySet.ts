@@ -1,9 +1,9 @@
 export class AnySet<T>
 {
-    private set = new Set<number>();
+    private set = new Set<string>();
     private elements: T[] = [];
 
-    constructor(private mapFunc: (item: T) => number)
+    constructor(private mapFunc: (item: T) => string)
     { }
 
     public has(item: T) : boolean

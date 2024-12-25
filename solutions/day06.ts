@@ -61,8 +61,8 @@ function simulate(map: string[][], guardPos: coord)
 {
     let dir = Direction.Up;
     let cycle = false;
-    const visited = new AnySet<coord>(coord => coord.col * 1000 + coord.row);
-    const states = new AnySet<vector>(vector => vector.col * 1000000 + vector.row * 1000 + vector.dir);
+    const visited = new AnySet<coord>(coord => `${coord.col},${coord.row}`);
+    const states = new AnySet<vector>(vector => `${vector.col},${vector.row}:${vector.dir}`);
     while (map[guardPos.row][guardPos.col])
     {
         const state = {...guardPos, dir};
